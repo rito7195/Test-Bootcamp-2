@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function nearestFibonacci(n)
+        {
+            let angka1 = 0;
+            let angka2 = 1;
+            
+            let angka3 = angka1 + angka2;
+            
+            while (angka3 <= n) {
+                angka1 = angka2;
+                
+                angka2 = angka3;
+                
+                angka3 = angka1 + angka2;
+            }
+            
+            let ans = (Math.abs(angka3 - n)
+                    >= Math.abs(angka2 - n))
+                        ? angka2
+                        : angka3;
+            
+            console.log(ans - n);
+        }
+        
+        let N = prompt("Masukkan deret angka dengan menggunakan pemisah koma : ").split(",")
+        N = N.map(Number)
+        let sum = N.reduce((x, y) => x + y)
+        nearestFibonacci(sum)
+    </script>
+</body>
+</html>

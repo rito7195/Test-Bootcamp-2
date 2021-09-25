@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		let kalimat = prompt("Masukkan kata atau kalimat : ")
+
+		cekPalindrom(kalimat.toLowerCase())
+
+		function cekPalindrom (kalimat) {
+			let split = kalimat.split("")
+			let reverse = split.reverse()
+			let join = reverse.join("")
+
+			if (join === kalimat) {
+				console.log("Palindrom")
+			} else {
+				console.log("Bukan Palindrom")
+			}
+		}
+	</script>
+</body>
+</html>
